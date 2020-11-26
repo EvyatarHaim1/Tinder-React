@@ -33,7 +33,7 @@ export default SwipeButtons;
 
 const Div = styled.div`
    position: fixed;
-   bottom: 10vh;
+   bottom: 5vh;
    width: 100%;
    display: flex;
    justify-content: space-evenly;

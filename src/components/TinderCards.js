@@ -12,7 +12,7 @@ function TinderCards() {
     // fetching once people api and populate the firestore db 
 
     // useEffect( async () => {
-    //     const users = await axios.get(`https://randomuser.me/api/?results=100`)
+    //     const users = await axios.get(`https://randomuser.me/api/?results=200&gender=female`)
     //     .then((response) => response.data.results)
     //     .then(users => users.map(user => (
     //         db.collection("people").add(
