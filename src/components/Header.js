@@ -3,23 +3,28 @@ import styled from 'styled-components';
 import PersonIcon from '@material-ui/icons/Person';
 import ForumIcon from '@material-ui/icons/Forum';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
         <Div>
-            <IconButton>
-                <PersonIcon className="headerIcon"
-                            fontSize="large"/>
-            </IconButton>
+            <Link to="/users">
+                <IconButton>
+                    <PersonIcon className="headerIcon"
+                                fontSize="large"/>
+                </IconButton>
+            </Link>
             <img 
               className="headerLogo"
               src="https://1000logos.net/wp-content/uploads/2018/07/tinder-logo.png" 
               alt="tinderLogo" />
-            <IconButton>
-                <ForumIcon  className="headerIcon"
-                            fontSize="large"
-                />
-            </IconButton>
+            <Link to="/chat">
+                <IconButton>
+                    <ForumIcon  className="headerIcon"
+                                fontSize="large"
+                    />
+                </IconButton>
+            </Link>
         </Div>
     )
 }
