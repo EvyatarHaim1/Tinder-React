@@ -14,10 +14,13 @@ function Header() {
                                 fontSize="large"/>
                 </IconButton>
             </Link>
+            <Link to="/">
             <img 
               className="headerLogo"
               src="https://1000logos.net/wp-content/uploads/2018/07/tinder-logo.png" 
-              alt="tinderLogo" />
+              alt="tinderLogo" 
+            />
+            </Link>
             <Link to="/chat">
                 <IconButton>
                     <ForumIcon  className="headerIcon"

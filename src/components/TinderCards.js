@@ -12,21 +12,30 @@ function TinderCards() {
     // fetching once people api and populate the firestore db 
 
     // useEffect( async () => {
-    //     const users = await axios.get(`https://randomuser.me/api/?results=600`)
+    //     const users = await axios.get(`https://randomuser.me/api/?results=100`)
     //     .then((response) => response.data.results)
     //     .then(users => users.map(user => (
     //         db.collection("people").add(
     //         { 
     //             name: user.name.first + " " + user.name.last,
-    //             url: user.picture.thumbnail,
-    //             id: user.id.value,
+    //             url: user.picture.large,
+
     //         }
     //         ))
     //     )) 
     // },[])
 
     useEffect(() => {
-
+       const unsubscribe = 
+       db.collection("people").onSnapshot(snapshot => (
+           setPeople(snapshot.docs.map(doc => doc.data()))
+       ))
+       console.log(people)
+       
+       return () => {
+           // cleanup 
+           unsubscribe();
+       }
     },[]);
 
     return (
@@ -61,14 +70,15 @@ const Div = styled.div`
 
 .card{
     position: relative;
-    width: 600px;
+    object-fit: contain;
+    width: 350px;
     padding: 20px;
     max-width: 85vw;
     height: 50vh;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
-    box-shadow: 0px 18px  53px 0px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 18px  53px 0px rgba(0, 0, 0, 0.3); */
 
     h3{
         position: absolute;
